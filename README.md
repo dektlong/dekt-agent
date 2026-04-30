@@ -1,6 +1,6 @@
 # dekt-factory-agent
 
-An AI agent for managing factory operations — supply chain status, manufacturing stages, and car order processing — deployed on Tanzu Application Service (TAS) via the Cursor AI platform.
+An AI agent for managing factory operations — supply chain status, manufacturing stages, and car order processing — deployed on Tanzu Platform using the new Agentic buildpack
 
 ---
 
