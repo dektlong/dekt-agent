@@ -8,7 +8,7 @@ An AI agent for managing factory operations — supply chain status, manufacturi
 
 ### Prerequisites
 
-#### 1. Tanzu Application Service (TAS) org and space
+#### 1. Tanzu Platform org and space
 
 Ensure you are logged in and targeting the correct org and space:
 
@@ -92,18 +92,6 @@ The `agent_buildpack` packages the agent, loads the system prompt from `factory-
 
 ---
 
-## User-Provided Services
-
-The agent is bound to the following services declared in `manifest.yml`. They are injected as environment variables (`VCAP_SERVICES`) at runtime:
-
-| Service name | Type | Purpose |
-|---|---|---|
-| `factory-genai` | CF marketplace service | Generative AI model endpoint (LLM backing the agent) |
-| `factory-info` | User-provided (MCP) | Manufacturing stage data (`getManufacturingStages` tool) |
-| `factory-orders` | User-provided (MCP) | Car order generation (`getRandomCarOrder` tool) |
-| `factory-documents` | User-provided (MCP) | Document analysis via RAG (`analyze-document` tool) |
-
----
 
 ## Agent Skills
 
