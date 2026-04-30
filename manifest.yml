@@ -1,0 +1,9 @@
+applications:
+- name: dekt-factory-agent
+  buildpacks:
+  - agent_buildpack
+  services:
+   - factory-genai
+   - factory-info
+   - factory-orders
+   - factory-documents 
