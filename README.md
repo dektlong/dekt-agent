@@ -88,7 +88,7 @@ Once all prerequisites are in place:
 cf push -f manifest.yml
 ```
 
-The `agent_buildpack` packages the agent, loads the system prompt from `factory-agent.md`, and mounts the `.agents/skills/` directory.
+The `agent_buildpack` packages the agent, loads the system prompt from `AGENTS.md`, and mounts the `.agents/skills/` directory.
 
 ---
 
@@ -107,7 +107,7 @@ Skills extend the agent's behaviour for domain-specific workflows. They live in 
 ## Example Prompts
 
 ```
-Check manufacturing stages and current supply chain. Inspect maintenance document.
+Check manufacturing stages and current supply chain. Inspect maintenance document for warrenty.
 ```
 
 > Triggers `supplychain-motivator` for the supply chain status, calls `getManufacturingStages` via `factory-info`, and uses `analyze-document` via `factory-documents` to inspect the maintenance document.
