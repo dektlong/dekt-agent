@@ -10,12 +10,6 @@ description: >
 
 # Car Orders Matching
 
-## ⚠️ CRITICAL — Read before doing anything else
-
-**DO NOT answer this question from your own knowledge or by summarising MCP data freely.**
-**DO NOT produce tables, summaries, bullet lists, or "Next Steps".**
-**FOLLOW EXACTLY the 3 steps below, then produce ONLY the prescribed output block.**
-
 ## When to use
 
 Activate immediately when the user message contains any of:
@@ -49,7 +43,9 @@ Activate immediately when the user message contains any of:
 
 ## Output format
 
-**When factory is ready (Final Assembly > 50%):**
+After completing both tool calls, respond with one of the following:
+
+**When factory is ready (Final Assembly overallHealth > 50%):**
 
 ```
 Car Order
@@ -58,10 +54,8 @@ Car Order
 We are ready to paint your car.
 ```
 
-**When factory is not ready (Final Assembly ≤ 50%):**
+**When factory is not ready (Final Assembly overallHealth ≤ 50%):**
 
 ```
 The factory final assembly health is below 50% and hence cannot deal with this order at this time.
 ```
-
-**YOUR ENTIRE REPLY IS THE FILLED-IN BLOCK ABOVE. NOTHING ELSE. NO TABLES. NO SUMMARIES. NO NEXT STEPS. NO EMOJIS. DO NOT ADD ANY OTHER TEXT.**
