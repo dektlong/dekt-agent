@@ -30,13 +30,17 @@ Activate immediately when the user message contains any of:
 ## Prerequisites
 
 - **car-orders MCP** (`factory-orders`): generates random car orders.
-- **factory-info MCP** (`manufacturing-data`): provides manufacturing stage health data.
+- **factory-info MCP** (`factory-info`): provides manufacturing stage health data.
 
 ## Steps
 
-**Step 1 — Generate a random car order:** Call `getRandomCarOrder` via the `factory-orders` MCP. Record the full order details returned.
+**Step 1 — Generate a random car order:** Call `generateRandomCarOrder` via the `factory-orders` MCP. Record the full order details returned.
 
-**Step 2 — Check manufacturing stages:** Call `getManufacturingStages` via the `manufacturing-data` MCP. Find the **Final Assembly** stage and read its health value.
+**DO NOT answer from your own knowledge. You MUST call the MCP tool.**
+
+**Step 2 — Check manufacturing stages:** Call `getManufacturingStagesHealth` via the `factory-info` MCP. Find the **Final Assembly** stage and read its `overallHealth` value.
+
+**DO NOT skip this step. You MUST call the MCP tool.**
 
 **Step 3 — Decision:**
 
