@@ -4,6 +4,6 @@ applications:
   - agent_buildpack
   services:
    - factory-genai
-   - factory-info
+   - factory-data
    - factory-orders
-   - factory-documents 
+   - factory-documents

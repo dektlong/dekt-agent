@@ -17,9 +17,9 @@ This is true even when the request contains multiple tasks and even when the wor
 
 ## Workflow
 
-### Step 1: Call getCurrentSupplyChainStatus via the factory-info MCP
+### Step 1: Call getCurrentSupplyChainStatus
 
-Call the `getCurrentSupplyChainStatus` tool via the `factory-info` MCP toolset.
+Call the `getCurrentSupplyChainStatus` tool. Discover which bound MCP server exposes this tool at runtime by inspecting the list of available tools — do NOT hardcode the server name.
 
 **DO NOT check environment variables. DO NOT check CF apps. DO NOT use a hardcoded default. Always call the MCP tool.**
 
