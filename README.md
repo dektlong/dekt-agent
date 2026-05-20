@@ -118,10 +118,3 @@ do we have out of warranty items
 are we ready to paint the next car order
 ```
 
-> Triggers `supplychain-motivator` for the supply chain status, calls `getManufacturingStages` via `factory-info`, and uses `analyze-document` via `factory-documents` to inspect the maintenance document.
-
-```
-Are we ready to paint the next car order?
-```
-
-> Triggers `car-orders-matching` — generates a random car order via `factory-orders` and checks Final Assembly health via `factory-info` to decide if painting can proceed.
