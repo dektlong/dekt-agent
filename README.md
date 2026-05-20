@@ -107,7 +107,15 @@ Skills extend the agent's behaviour for domain-specific workflows. They live in 
 ## Example Prompts
 
 ```
-Check manufacturing stages and current supply chain. Inspect maintenance document for warrenty.
+check manufacturing stages and current supply chain. Inspect maintenance document for warrenty.
+
+what is the health of our manufactoring
+
+do we need to motivate our supply chain
+
+do we have out of warranty items
+
+are we ready to paint the next car order
 ```
 
 > Triggers `supplychain-motivator` for the supply chain status, calls `getManufacturingStages` via `factory-info`, and uses `analyze-document` via `factory-documents` to inspect the maintenance document.
