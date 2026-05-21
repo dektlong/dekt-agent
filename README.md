@@ -130,6 +130,6 @@ do we have out of warranty items
 
 are we ready to paint the next car order
 
-post summary to google chat
+post orders report to google chat
 ```
 
