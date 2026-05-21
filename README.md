@@ -70,6 +70,21 @@ cf create-user-provided-service factory-documents \
   -t mcp-server
 ```
 
+**chat-poster-mcp** — posts agent results to a Google Chat space (post-to-chat tool)
+
+```bash
+git clone https://github.com/dektlong/chat-poster-mcp
+cd chat-poster-mcp
+cf push -f manifest.yml
+cd ..
+
+cf create-user-provided-service chat-poster \
+  -p '{"url": "https://dekt-mcp-gw.apps.<domain>/chat-poster-mcp/mcp"}' \
+  -t mcp-server
+```
+
+> Webhook credentials (space id, key, token) are configured on the `chat-poster-mcp` app itself — not on the agent. See that repo's README for credential setup.
+
 #### 4. GenAI service with tool-calling support
 
 Create a GenAI service instance backed by a model that supports **tool calling** (required for MCP tool invocation and skill execution):
@@ -107,14 +122,14 @@ Skills extend the agent's behaviour for domain-specific workflows. They live in 
 ## Example Prompts
 
 ```
-check manufacturing stages and current supply chain. Inspect maintenance document for warrenty.
-
-what is the health of our manufactoring
+what is the health of our manufacturing
 
 do we need to motivate our supply chain
 
 do we have out of warranty items
 
 are we ready to paint the next car order
+
+post summary to google chat
 ```
 

@@ -6,4 +6,5 @@ applications:
    - factory-genai
    - factory-data
    - factory-orders
-   - factory-documents
+   - doc-analyzer
+   - chat-poster
