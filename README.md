@@ -23,6 +23,8 @@ The MCP Gateway is the entry point that routes agent tool calls to the MCP serve
 
 ```bash
 cf create-service mcp-gateway standard dekt-mcp-gw
+
+cf create-service p-identity uaa dekt-sso
 ```
 
 Note the gateway's public URL — you will use it when registering each MCP server as a user-provided service (e.g. `https://dekt-mcp-gw.apps.<domain>`).
