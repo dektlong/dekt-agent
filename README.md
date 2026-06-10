@@ -31,12 +31,22 @@ Note the gateway's public URL — you will use it when registering each MCP serv
 
 Each MCP server is a standalone Spring Boot app. Clone and push each one, then register it as a user-provided service pointing to its route through the MCP Gateway.
 
-**factory-mcp-server** — manufacturing stage data and supply chain dashboard
+**factory-mcp-server** — manufacturing stage data and supply chain dashboard, demo as secured MCP with Auth required 
+ 
 
 ```bash
 git clone https://github.com/dektlong/factory-mcp-server
 cd factory-mcp-server
 cf push -f manifest.yml
+
+cf bind-service dekt-car-orders-mcp dekt-mcp-gw -c '{
+  "auth": {
+    "service-instance": {
+      "type": "OIDC",
+      "name": "dekt-sso"
+    }
+  }
+}' --wait
 cd ..
 
 cf create-user-provided-service factory-info \
@@ -44,12 +54,22 @@ cf create-user-provided-service factory-info \
   -t mcp-server
 ```
 
-**car-orders-mcp-server** — car order management tools
+**car-orders-mcp-server** — car order management tools, demo as secured MCP with Auth required 
 
 ```bash
 git clone https://github.com/dektlong/car-orders-mcp-server
 cd car-orders-mcp-server
 cf push -f manifest.yml
+
+cf bind-service dekt-car-orders-mcp dekt-mcp-gw -c '{
+  "auth": {
+    "service-instance": {
+      "type": "OIDC",
+      "name": "dekt-sso"
+    }
+  }
+}' --wait
+
 cd ..
 
 cf create-user-provided-service factory-orders \
